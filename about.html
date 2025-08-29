@@ -1,66 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>about</title>
+    <title>项目经历</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <header>
-        <ul>
-            <li><a href="#project">项目经历</a></li>
-            <li><a href="#competition">竞赛经历</a></li>
-            <li><a href="#award">获奖情况</a></li>
-        </ul>
+<body class="site-body">
+    <button class="sidebar-toggle" aria-label="打开菜单"></button>
+    <header class="site-header">
+        <nav class="header-nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#project" class="nav-link">项目经历</a></li>
+                <li class="nav-item"><a href="#competition" class="nav-link">竞赛经历</a></li>
+                <li class="nav-item"><a href="#award" class="nav-link">获奖情况</a></li>
+            </ul>
+        </nav>
     </header>
-    <aside>
-        <ul>
-            <li><a href="index.html">个人主页</a></li>
-            <li><a href="course.html">课程学习</a></li>
-            <li><a href="about.html">项目经历</a></li>
-            <li><a href="contact.html">联系方式</a></li>
-        </ul>
+    <aside class="site-sidebar">
+        <nav class="sidebar-nav">
+            <ul class="sidebar-list">
+                <li class="sidebar-item"><a href="index.html" class="sidebar-link">个人主页</a></li>
+                <li class="sidebar-item"><a href="course.html" class="sidebar-link">课程学习</a></li>
+                <li class="sidebar-item"><a href="about.html" class="sidebar-link">项目经历</a></li>
+                <li class="sidebar-item"><a href="contact.html" class="sidebar-link">联系方式</a></li>
+            </ul>
+        </nav>
     </aside>
-    <main>
-        <h1 id="project">项目经历</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>项目名称</th>
-                    <th>项目描述</th>
-                    <th>项目技术</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>智能停车场挡车器</td>
-                    <td>基于多种传感器的在线试联网停车场</td>
-                    <td>SpringBoot、MySQL</td>
-                </tr>
-            </tbody>
-
-        </table>
-        <article>
-            <h1 id="competition">竞赛经历</h1>
-            <ul>
-                <li>2025年浙江省赛铜奖</li>
-                <li></li>
-                <li></li>
+    <main class="site-main">
+        <section class="project-section">
+            <h1 id="project" class="section-title">项目经历</h1>
+            <div class="table-responsive">
+<table class="project-table">
+                <thead class="table-header">
+                    <tr class="table-row-header">
+                        <th class="table-header-cell">项目名称</th>
+                        <th class="table-header-cell">项目描述</th>
+                        <th class="table-header-cell">项目技术</th>
+                    </tr>
+                </thead>
+                <tbody class="table-body">
+                    <tr class="table-row">
+                        <td class="table-cell">智能停车场挡车器</td>
+                        <td class="table-cell">基于多种传感器的在线物联网停车场管理系统，实现车位检测与预约功能</td>
+                        <td class="table-cell">SpringBoot、MySQL、Redis、Vue.js</td>
+                    </tr>
+                    <tr class="table-row">
+                        <td class="table-cell">校园二手交易平台</td>
+                        <td class="table-cell">面向大学生的C2C交易平台，支持商品发布、搜索、交易流程管理</td>
+                        <td class="table-cell">React、Node.js、MongoDB、Express</td>
+                    </tr>
+                </tbody>
+            </table>
+</div>
+        </section>
+        <article class="competition-article">
+            <h1 id="competition" class="section-title">竞赛经历</h1>
+            <ul class="competition-list">
+                <li class="competition-item">2025年浙江省大学生程序设计竞赛铜奖</li>
+                <li class="competition-item">2024年全国大学生数学建模竞赛省级二等奖</li>
+                <li class="competition-item">2023年蓝桥杯全国软件和信息技术专业人才大赛省级三等奖</li>
             </ul>
         </article>
-        <article>
-            <h1 id="award">获奖情况</h1>
-            <ul>
-                <li></li>
-                <li></li>
+        <article class="award-article">
+            <h1 id="award" class="section-title">获奖情况</h1>
+            <ul class="award-list">
+                <li class="award-item">2023-2024学年国家奖学金</li>
+                <li class="award-item">2022-2023学年校级一等奖学金</li>
+                <li class="award-item">2024年度校级优秀学生干部</li>
+                <li class="award-item">2023年度校级三好学生</li>
             </ul>
         </article>
     </main>
-    <footer>
-
+    <footer class="site-footer">
+        <div class="footer-content">
+            <!-- 页脚内容 -->
+        </div>
     </footer>
+    <script src="mobile.js"></script>
 </body>
 
 </html>

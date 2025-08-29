@@ -4,51 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>个人主页</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <header>
-        <ul>
-            <li><a href="course.html">课程学习</a></li>
-            <li><a href="about.html">项目经历</a></li>
-            <li><a href="contact.html">联系方式</a></li>
-        </ul>
+<body class="site-body">
+    <button class="sidebar-toggle" aria-label="打开菜单"></button>
+    <header class="site-header">
+        <nav class="header-nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#introduction" class="nav-link">个人简介</a></li>
+            </ul>
+        </nav>
     </header>
-    <aside>
-        <ul>
-            <li><a href="index.html">个人主页</a></li>
-            <li><a href="course.html">课程学习</a></li>
-            <li><a href="about.html">项目经历</a></li>
-            <li><a href="contact.html">联系方式</a></li>
-        </ul>
+    <aside class="site-sidebar">
+        <nav class="sidebar-nav">
+            <ul class="sidebar-list">
+                <li class="sidebar-item"><a href="index.html" class="sidebar-link">个人主页</a></li>
+                <li class="sidebar-item"><a href="course.html" class="sidebar-link">课程学习</a></li>
+                <li class="sidebar-item"><a href="about.html" class="sidebar-link">项目经历</a></li>
+                <li class="sidebar-item"><a href="contact.html" class="sidebar-link">联系方式</a></li>
+            </ul>
+        </nav>
     </aside>
-    <main>
-        <div>
-            <table>
-                <tr>
-                    <th>姓名</th>
-                    <th>年龄</th>
-                    <th>性别</th>
-                    <th>学历</th>
-                    <th>专业</th>
-                </tr>
-                <tr>
-                    <td>朱宇文</td>
-                    <td>21</td>
-                    <td>男</td>
-                    <td>本科</td>
-                    <td>计算机科学与技术</td>
-                </tr>
+    <main class="site-main">
+        <section class="profile-section">
+            <table class="profile-table">
+                <thead class="table-header">
+                    <tr class="table-row-header">
+                        <th class="table-header-cell">姓名</th>
+                        <th class="table-header-cell">年龄</th>
+                        <th class="table-header-cell">性别</th>
+                        <th class="table-header-cell">学历</th>
+                        <th class="table-header-cell">专业</th>
+                        <th class="table-header-cell">爱好</th>
+                    </tr>
+                </thead>
+                <tbody class="table-body">
+                    <tr class="table-row">
+                        <td class="table-cell">朱宇文</td>
+                        <td class="table-cell">21</td>
+                        <td class="table-cell">男</td>
+                        <td class="table-cell">本科</td>
+                        <td class="table-cell">计算机科学与技术</td>
+                        <td class="table-cell">篮球、足球、跑步</td>
+                    </tr>
+                </tbody>
             </table>
-        </div>
-        <div>
-            <h1>个人简介</h1>
-            <p>浙大城市学院学生XXX</p>
-        </div>
+        </section>
+        <section class="intro-section">
+            <h1 id="introduction" class="section-title">个人简介</h1>
+            <p class="intro-text">浙大城市学院计算机科学与技术专业大三学生，GPA 3.8/4.0，专业排名前10%。</p>
+            <div class="profile-highlights">
+                <h2 class="section-subtitle">核心优势</h2>
+                <ul class="highlight-list">
+                    <li class="highlight-item">掌握Java、Python、C++多语言开发</li>
+                    <li class="highlight-item">熟悉Spring Boot、Vue.js等主流框架</li>
+                    <li class="highlight-item">曾获国家奖学金、校级优秀学生称号</li>
+                    <li class="highlight-item">具备良好的算法基础，LeetCode刷题300+</li>
+                </ul>
+            </div>
+            <div class="education-info">
+                <h2 class="section-subtitle">教育背景</h2>
+                <p class="education-detail">浙大城市学院 | 计算机科学与技术 | 2022.09-至今</p>
+                <p class="education-detail">核心课程：数据结构、计算机网络、操作系统、数据库系统、人工智能导论</p>
+            </div>
+        </section>
     </main>
-    <footer>
-
+    <footer class="site-footer">
+        <div class="footer-content">
+            <!-- 页脚内容 -->
+        </div>
     </footer>
+    <script src="mobile.js"></script>
 </body>
 
 </html>

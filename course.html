@@ -1,89 +1,136 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>course</title>
+    <title>课程学习</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header>
-        <ul>
-            <li><a href="#skill">我的技能</a></li>
-            <li><a href="#course">课程学习</a></li>
-        </ul>
+<body class="site-body">
+    <button class="sidebar-toggle" aria-label="打开菜单"></button>
+    <header class="site-header">
+        <nav class="header-nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#skill" class="nav-link">我的技能</a></li>
+                <li class="nav-item"><a href="#course" class="nav-link">课程学习</a></li>
+            </ul>
+        </nav>
     </header>
-    <aside>
-        <ul>
-            <li><a href="index.html">个人主页</a></li>
-            <li><a href="course.html">课程学习</a></li>
-            <li><a href="about.html">项目经历</a></li>
-            <li><a href="contact.html">联系方式</a></li>
-        </ul>
+    <aside class="site-sidebar">
+        <nav class="sidebar-nav">
+            <ul class="sidebar-list">
+                <li class="sidebar-item"><a href="index.html" class="sidebar-link">个人主页</a></li>
+                <li class="sidebar-item"><a href="course.html" class="sidebar-link">课程学习</a></li>
+                <li class="sidebar-item"><a href="about.html" class="sidebar-link">项目经历</a></li>
+                <li class="sidebar-item"><a href="contact.html" class="sidebar-link">联系方式</a></li>
+            </ul>
+        </nav>
     </aside>
-    <main>
-        <h1 id="skill">我的技能</h1>
-        <ul>
-            <li>Java编程</li>
-            <li>MySQL数据库系统操作</li>
-            <li>算法设计</li>
-        </ul>
-        <h1 id="course">课程学习</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>课程名称</th>
-                    <th>学分</th>
-                    <th>成绩</th>
-                    <th>学期</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>高等数学</td>
-                    <td>5</td>
-                    <td>92</td>
-                    <td>第一学期</td>
-                </tr>
-                <tr>
-                    <td>程序设计基础</td>
-                    <td>4</td>
-                    <td>88</td>
-                    <td>第一学期</td>
-                </tr>
-                <tr>
-                    <td>数据结构</td>
-                    <td>4</td>
-                    <td>95</td>
-                    <td>第二学期</td>
-                </tr>
-                <tr>
-                    <td>计算机网络</td>
-                    <td>3</td>
-                    <td>90</td>
-                    <td>第二学期</td>
-                </tr>
-                <tr>
-                    <td>操作系统</td>
-                    <td>3</td>
-                    <td>85</td>
-                    <td>第三学期</td>
-                </tr>
-                <tr>
-                    <td>数据库系统</td>
-                    <td>4</td>
-                    <td>93</td>
-                    <td>第三学期</td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td>总计23学分</td>
-                </tr>
-            </tfoot>
-        </table>
+    <main class="site-main">
+        <section class="skill-section">
+            <h1 id="skill" class="section-title">我的技能</h1>
+            <ul class="skill-list">
+                <li class="skill-item">Java编程（Spring Boot、MyBatis）</li>
+                <li class="skill-item">Python开发（数据分析、机器学习基础）</li>
+                <li class="skill-item">前端开发（HTML/CSS/JavaScript、Vue.js）</li>
+                <li class="skill-item">数据库技术（MySQL、Redis、MongoDB）</li>
+                <li class="skill-item">算法设计与分析（LeetCode 300+题）</li>
+                <li class="skill-item">版本控制（Git、GitHub）</li>
+            </ul>
+        </section>
+        <section class="course-section">
+            <h1 id="course" class="section-title">课程学习</h1>
+            <div class="table-responsive">
+<table class="course-table">
+                <thead class="table-header">
+                    <tr class="table-row-header">
+                        <th class="table-header-cell">课程名称</th>
+                        <th class="table-header-cell">学分</th>
+                        <th class="table-header-cell">成绩</th>
+                        <th class="table-header-cell">学期</th>
+                    </tr>
+                </thead>
+                <tbody class="table-body">
+                    <tr class="table-row">
+                        <td class="table-cell">高等数学</td>
+                        <td class="table-cell">5</td>
+                        <td class="table-cell">92</td>
+                        <td class="table-cell">第一学期</td>
+                    </tr>
+                    <tr class="table-row">
+                        <td class="table-cell">程序设计基础</td>
+                        <td class="table-cell">4</td>
+                        <td class="table-cell">88</td>
+                        <td class="table-cell">第一学期</td>
+                    </tr>
+                    <tr class="table-row">
+                        <td class="table-cell">数据结构</td>
+                        <td class="table-cell">4</td>
+                        <td class="table-cell">95</td>
+                        <td class="table-cell">第二学期</td>
+                    </tr>
+                    <tr class="table-row">
+                        <td class="table-cell">计算机网络</td>
+                        <td class="table-cell">3</td>
+                        <td class="table-cell">90</td>
+                        <td class="table-cell">第二学期</td>
+                    </tr>
+                    <tr class="table-row">
+                        <td class="table-cell">操作系统</td>
+                        <td class="table-cell">3</td>
+                        <td class="table-cell">85</td>
+                        <td class="table-cell">第三学期</td>
+                    </tr>
+                    <tr class="table-row">
+                        <td class="table-cell">数据库系统</td>
+                        <td class="table-cell">4</td>
+                        <td class="table-cell">93</td>
+                        <td class="table-cell">第三学期</td>
+                    </tr>
+                    <tr class="table-row">
+                        <td class="table-cell">编译原理</td>
+                        <td class="table-cell">3</td>
+                        <td class="table-cell">88</td>
+                        <td class="table-cell">第四学期</td>
+                    </tr>
+                </tbody>
+                <tfoot class="table-footer">
+                    <tr class="table-row-footer">
+                        <td class="table-footer-cell" colspan="4">总计23学分</td>
+                    </tr>
+                </tfoot>
+            </table>
+</div>
+</div>
+        </section>
+        <section class="internship-section">
+            <h1 id="internship" class="section-title">实习经历</h1>
+            <div class="table-responsive">
+<table class="internship-table">
+                <thead class="table-header">
+                    <tr class="table-row-header">
+                        <th class="table-header-cell">公司名称</th>
+                        <th class="table-header-cell">职位</th>
+                        <th class="table-header-cell">时间</th>
+                        <th class="table-header-cell">主要职责</th>
+                    </tr>
+                </thead>
+                <tbody class="table-body">
+                    <tr class="table-row">
+                        <td class="table-cell">杭州XX科技有限公司</td>
+                        <td class="table-cell">后端开发实习生</td>
+                        <td class="table-cell">2024.07-2024.09</td>
+                        <td class="table-cell">参与开发电商后台管理系统，负责接口设计与实现</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </main>
-    <footer>
-
+    <footer class="site-footer">
+        <div class="footer-content">
+            <!-- 页脚内容 -->
+        </div>
     </footer>
+    <script src="mobile.js"></script>
 </body>
 </html>

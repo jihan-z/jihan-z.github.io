@@ -1,0 +1,477 @@
+/* 全局样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 全局样式设置 */
+body.site-body {
+    font-family: "SimSun", serif;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* 顶部导航栏样式 */
+header.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: #1890ff;
+    color: white;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+nav.header-nav {
+    height: 100%;
+}
+
+ul.nav-list {
+    display: flex;
+    list-style: none;
+    height: 100%;
+    padding: 0 20px;
+}
+
+li.nav-item {
+    margin-right: 24px;
+    height: 100%;
+}
+
+li.nav-item a.nav-link {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 0 8px;
+    transition: background-color 0.3s;
+}
+
+li.nav-item a.nav-link:hover {
+    background-color: #096dd9;
+    border-radius: 4px;
+}
+
+/* 侧边栏样式 */
+aside.site-sidebar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    bottom: 0;
+    width: 220px;
+    background-color: #e6f7ff;
+    border-right: 1px solid #d9d9d9;
+    padding-top: 20px;
+    z-index: 900;
+}
+
+nav.sidebar-nav {
+    width: 100%;
+}
+
+ul.sidebar-list {
+    list-style: none;
+    padding: 0 16px;
+}
+
+li.sidebar-item {
+    margin-bottom: 12px;
+}
+
+li.sidebar-item a.sidebar-link {
+    display: block;
+    color: #0050b3;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: all 0.3s;
+    font-size: 15px;
+}
+
+li.sidebar-item a.sidebar-link:hover {
+    background-color: #b3e0ff;
+    color: #003a8c;
+}
+
+/* 主内容区域样式 */
+main.site-main {
+    margin-top: 80px;
+    margin-left: 240px;
+    padding: 24px;
+    max-width: 1200px;
+}
+
+/* 标题样式 */
+h1.section-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #0050b3;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e6f7ff;
+}
+
+.section-subtitle {
+    font-size: 22px;
+    font-weight: bold;
+    color: #0050b3;
+    margin: 20px 0 12px;
+}
+
+.profile-highlights {
+    margin: 24px 0;
+    padding: 16px;
+    background-color: #f0f7ff;
+    border-radius: 8px;
+}
+
+.highlight-list {
+    padding-left: 24px;
+}
+
+.highlight-item {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.education-info {
+    margin-top: 24px;
+}
+
+.education-detail {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.internship-section {
+    margin-top: 40px;
+}
+
+.career-objective {
+    margin-top: 32px;
+    padding: 16px;
+    background-color: #e6f7ff;
+    border-radius: 8px;
+}
+
+.objective-text {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* 段落样式 */
+p {
+    margin-bottom: 16px;
+    font-size: 16px;
+}
+
+/* 表格样式 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 32px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+th.table-header-cell,
+ td.table-cell {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+th.table-header-cell {
+    background-color: #f0f7ff;
+    color: #0050b3;
+    font-weight: bold;
+}
+
+tr.table-row:hover {
+    background-color: #f5faff;
+}
+
+/* 列表样式 */
+ul {
+    margin-bottom: 24px;
+    padding-left: 24px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* 区块样式 */
+section {
+    margin-bottom: 40px;
+    padding: 24px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 页脚样式 */
+footer.site-footer {
+    margin-left: 220px;
+    padding: 24px;
+    text-align: center;
+    color: #666;
+    border-top: 1px solid #e8e8e8;
+    margin-top: 24px;
+}
+
+/* 链接样式 */
+a.contact-link {
+    color: #1890ff;
+    text-decoration: none;
+}
+
+a.contact-link:hover {
+    text-decoration: underline;
+    color: #096dd9;
+}
+
+/* 移动端菜单按钮样式补充 */
+.sidebar-toggle::before {
+    content: '≡';
+    font-size: 20px;
+    line-height: 26px;
+}
+
+/* 确保所有内容框不溢出 */
+* {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* 图片响应式处理 */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 平滑滚动 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 内容间距调整 */
+.container,
+.containers {
+    margin-bottom: 32px;
+}
+
+.contact-info {
+    line-height: 2;
+}
+
+.skill-list {
+    padding-left: 20px;
+}
+
+.skill-item {
+    margin-bottom: 8px;
+}
+
+/* 响应式调整 */
+/* 基础过渡动画定义 */
+* {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 页面加载动画 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+body.site-body {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* 链接跳转动画 */
+a {
+    position: relative;
+    overflow: hidden;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #096dd9;
+    transition: width 0.3s ease;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+/* 响应式布局 - 平板设备 */
+@media (max-width: 768px) {
+    aside.site-sidebar {
+        width: 160px;
+    }
+    main.site-main {
+        margin-left: 180px;
+        padding: 16px;
+    }
+    .section-title {
+        font-size: 24px;
+    }
+    .section-subtitle {
+        font-size: 20px;
+    }
+}
+
+/* 响应式布局 - 大屏手机 */
+@media (max-width: 640px) {
+    header.site-header {
+        height: 50px;
+    }
+    ul.nav-list {
+        padding: 0 10px;
+    }
+    li.nav-item {
+        margin-right: 15px;
+    }
+    li.nav-item a.nav-link {
+        font-size: 14px;
+    }
+    aside.site-sidebar {
+        transform: translateX(-100%);
+        position: fixed;
+        z-index: 1001;
+        height: calc(100vh - 50px);
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    }
+    aside.site-sidebar.active {
+        transform: translateX(0);
+    }
+    main.site-main {
+        margin-left: 0;
+        margin-top: 70px;
+    }
+    /* 侧边栏切换按钮 */
+    .sidebar-toggle {
+        display: block;
+        position: fixed;
+        top: 12px;
+        left: 10px;
+        z-index: 1002;
+        background: #1890ff;
+        color: white;
+        border: none;
+        width: 30px;
+        height: 26px;
+        padding: 0;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    /* 表格响应式处理 */
+    .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin-bottom: 16px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    
+    /* 表格单元格内容换行 */
+    td.table-cell {
+        white-space: normal;
+        word-wrap: break-word;
+        max-width: 150px;
+    }
+    table {
+        min-width: 100%;
+    }
+    th.table-header-cell, td.table-cell {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+}
+
+/* 响应式布局 - 小屏手机 */
+@media (max-width: 375px) {
+    .section-title {
+        font-size: 22px;
+    }
+    .section-subtitle {
+        font-size: 18px;
+    }
+    p, li {
+        font-size: 14px;
+    }
+    .contact-item {
+        font-size: 14px;
+        word-break: break-all;
+    }
+    .sidebar-toggle {
+        left: 8px;
+        top: 10px;
+    }
+    main.site-main {
+        padding: 12px;
+    }
+}
+
+/* 添加侧边栏切换按钮样式 */
+.sidebar-toggle {
+    display: none;
+}
+
+/* 滚动触发动画 */
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+section {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUp 0.6s ease forwards;
+}
+
+/* 依次延迟动画 */
+section:nth-child(1) { animation-delay: 0.1s; }
+section:nth-child(2) { animation-delay: 0.3s; }
+section:nth-child(3) { animation-delay: 0.5s; }
+
+/* 导航栏交互优化 */
+.nav-link {
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* 导航栏滚动效果 */
+header.site-header.scrolled {
+    background-color: rgba(24, 144, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
