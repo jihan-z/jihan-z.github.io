@@ -319,7 +319,7 @@ a:hover::after {
 }
 
 /* 响应式布局 - 平板设备 */
-@media (max-width: 768px) {
+@media (max-width: 1280px) {
     aside.site-sidebar {
         width: 160px;
     }
@@ -336,7 +336,7 @@ a:hover::after {
 }
 
 /* 响应式布局 - 大屏手机 */
-@media (max-width: 640px) {
+@media (max-width: 768px) {
     header.site-header {
         height: 50px;
     }
@@ -350,35 +350,38 @@ a:hover::after {
         font-size: 14px;
     }
     aside.site-sidebar {
-        transform: translateX(-100%);
         position: fixed;
+        left: 0;
+        top: 50px;
+        bottom: 0;
+        width: 120px;
+        transform: translateX(0) !important;
         z-index: 1001;
         height: calc(100vh - 50px);
         box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        border-right: 1px solid #d9d9d9;
+        padding-top: 20px;
+        display: block !important;
     }
-    aside.site-sidebar.active {
-        transform: translateX(0);
+    .sidebar-list {
+        display: block;
+        padding: 0 10px;
+    }
+    .sidebar-item {
+        margin-bottom: 10px;
+        display: block;
+    }
+    li.sidebar-item a.sidebar-link {
+        font-size: 13px;
+        padding: 6px 8px;
     }
     main.site-main {
-        margin-left: 0;
-        margin-top: 70px;
+        margin-left: 100px;
+        margin-top: 50px;
     }
-    /* 侧边栏切换按钮 */
-    .sidebar-toggle {
-        display: block;
-        position: fixed;
-        top: 12px;
-        left: 10px;
-        z-index: 1002;
-        background: #1890ff;
-        color: white;
-        border: none;
-        width: 30px;
-        height: 26px;
-        padding: 0;
-        cursor: pointer;
-        border-radius: 4px;
-    }
+    /* header.site-header .header-nav {
+        display: none;
+    } */
     /* 表格响应式处理 */
     .table-responsive {
         overflow-x: auto;
@@ -401,35 +404,55 @@ a:hover::after {
         padding: 8px 10px;
         font-size: 14px;
     }
+    /* 移除侧边栏切换按钮 */
+    .sidebar-toggle {
+        display: none;
+    }
 }
 
-/* 响应式布局 - 小屏手机 */
+/* 小屏手机适配 */
 @media (max-width: 375px) {
-    .section-title {
-        font-size: 22px;
+    aside.site-sidebar {
+        width: 80px;
     }
-    .section-subtitle {
-        font-size: 18px;
-    }
-    p, li {
-        font-size: 14px;
-    }
-    .contact-item {
-        font-size: 14px;
-        word-break: break-all;
-    }
-    .sidebar-toggle {
-        left: 8px;
-        top: 10px;
+    li.sidebar-item a.sidebar-link {
+        font-size: 12px;
     }
     main.site-main {
+        margin-left: 60px;
         padding: 12px;
     }
 }
 
+/* 响应式布局 - 小屏手机 */
+/* 大屏设备恢复原样式 */
+@media (min-width: 769px) {
+    aside.site-sidebar {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        bottom: 0;
+        width: 220px;
+        background-color: #e6f7ff;
+        border-right: 1px solid #d9d9d9;
+        padding-top: 20px;
+        z-index: 900;
+    }
+    main.site-main {
+        margin-top: 80px;
+        margin-left: 240px;
+        padding: 24px;
+        max-width: 1200px;
+    }
+    header.site-header .header-nav {
+        display: flex !important;
+    }
+}
+
 /* 添加侧边栏切换按钮样式 */
+/* 移除侧边栏切换按钮样式 */
 .sidebar-toggle {
-    display: none;
+    display: none !important;
 }
 
 /* 滚动触发动画 */
