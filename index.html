@@ -16,6 +16,12 @@
         <nav class="header-nav">
             <ul class="nav-list">
                 <li class="nav-item"><a href="#introduction" class="nav-link">个人简介</a></li>
+                <li class="nav-item theme-toggle-container" style="margin-left: auto;">
+                    <button id="theme-toggle" class="theme-toggle nav-link" aria-label="切换日夜模式">
+                        <span class="light-text">夜间模式</span>
+                        <span class="dark-text" style="display: none;">日间模式</span>
+                    </button>
+                </li>
             </ul>
         </nav>
     </header>
@@ -30,6 +36,12 @@
         </nav>
     </aside>
     <main class="site-main">
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <h1 id="typing-title" class="hero-title"></h1>
+                <p class="hero-subtitle">探索我的个人主页，了解我的项目和经历</p>
+            </div>
+        </section>
         <section class="profile-section">
             <table class="profile-table">
                 <thead class="table-header">
@@ -56,6 +68,11 @@
         </section>
         <section class="intro-section">
             <h1 id="introduction" class="section-title">个人简介</h1>
+        </section>
+        <section id="projects" class="projects-section">
+            <h1 class="section-title">我的项目</h1>
+            <div class="filter-container"></div>
+            <div id="projects-container" class="projects-grid"></div>
             <p class="intro-text">浙大城市学院计算机科学与技术专业大三学生，GPA 3.8/4.0，专业排名前10%。</p>
             <div class="profile-highlights">
                 <h2 class="section-subtitle">核心优势</h2>
