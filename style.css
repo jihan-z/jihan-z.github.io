@@ -71,6 +71,36 @@ aside.site-sidebar {
     z-index: 900;
 }
 
+/* 侧边栏隐藏样式 */
+aside.site-sidebar.hidden {
+    transform: translateX(-100%);
+    pointer-events: none;
+}
+
+/* 侧边栏显示在顶层的样式 */
+aside.site-sidebar.visible {
+    z-index: 1002;
+}
+
+/* 页面内容高斯模糊效果 */
+.main-content-blur {
+    filter: blur(5px);
+    pointer-events: none;
+}
+
+/* 移动端点击遮罩层 */
+.mobile-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    cursor: pointer;
+}
+
 nav.sidebar-nav {
     width: 100%;
 }
@@ -355,13 +385,24 @@ a:hover::after {
         top: 50px;
         bottom: 0;
         width: 120px;
-        transform: translateX(0) !important;
+        transform: translateX(-100%) !important;
         z-index: 1001;
         height: calc(100vh - 50px);
         box-shadow: 2px 0 10px rgba(0,0,0,0.1);
         border-right: 1px solid #d9d9d9;
         padding-top: 20px;
         display: block !important;
+    }
+    /* 手机端显示overlay */
+    .mobile-overlay {
+        display: block;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
+    .mobile-overlay.active {
+        opacity: 1;
+        pointer-events: auto;
     }
     .sidebar-list {
         display: block;
@@ -378,6 +419,10 @@ a:hover::after {
     main.site-main {
         margin-left: 100px;
         margin-top: 50px;
+    }
+    /* 侧边栏隐藏时main占满屏幕 */
+    aside.site-sidebar.hidden ~ main.site-main {
+        margin-left: 0 !important;
     }
     /* header.site-header .header-nav {
         display: none;
