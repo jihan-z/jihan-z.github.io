@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>个人主页</title>
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2IDJDNjIuNTYgMiAxMDIgMTEuNDQgMTAyIDI2QzEwMiA0MC41NiA2Mi41NiA1MCAxNiA1MEMtMzAuNTYgNTAgLTcwIDQwLjU2IC03MCAyNkMtNzAgMTEuNDQgLTMwLjU2IDIgMTYgMloiIGZpbGw9IiMxODkwZmYiLz4KPHBhdGggZD0iTTEyIDE4QzEyIDE5LjEwNDYgMTEuMTA0NiAyMCAxMCAyMEM4Ljg5NTQzIDIwIDggMTkuMTA0NiA4IDE4QzggMTYuODk1NCA4Ljg5NTQzIDE2IDEwIDE2QzExLjEwNDYgMTYgMTIgMTYuODk1NCAxMiAxOFoiIGZpbGw9IiNmZmZmZmYiLz4KPHBhdGggZD0iTTI0IDE4QzI0IDE5LjEwNDYgMjMuMTA0NiAyMCAyMiAyMEMyMC44OTU0IDIwIDIwIDE5LjEwNDYgMjAgMThDMjAgMTYuODk1NCAyMC44OTU0IDE2IDIyIDE2QzIzLjEwNDYgMTYgMjQgMTYuODk1NCAyNCAxOFoiIGZpbGw9IiNmZmZmZmYiLz4KPHBhdGggZD0iTTE2IDI4QzE0LjM0MzEgMjggMTMgMjYuNjU2OSAxMyAyNUgxOUMxOSAyNi42NTY5IDE3LjY1NjkgMjggMTYgMjhaIiBmaWxsPSIjZmZmZmZmIi8+Cjwvc3ZnPgo=">
     <link rel="stylesheet" href="style.css">
     <script type="module" src="index.js"></script>
 </head>
@@ -16,10 +18,16 @@
         <nav class="header-nav">
             <ul class="nav-list">
                 <li class="nav-item"><a href="#introduction" class="nav-link">个人简介</a></li>
-                <li class="nav-item theme-toggle-container" style="margin-left: auto;">
+                <li class="nav-item"><a href="#projects" class="nav-link">我的项目</a></li>
+                <li class="nav-item theme-toggle-container">
                     <button id="theme-toggle" class="theme-toggle nav-link" aria-label="切换日夜模式">
                         <span class="light-text">夜间模式</span>
                         <span class="dark-text" style="display: none;">日间模式</span>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button id="cursor-toggle" class="cursor-toggle" aria-label="切换自定义光标" title="自定义光标">
+                        ⚙
                     </button>
                 </li>
             </ul>
@@ -28,8 +36,8 @@
     <aside class="site-sidebar">
         <nav class="sidebar-nav">
             <ul class="sidebar-list">
-                <li class="sidebar-item"><a href="index.html" class="sidebar-link">个人主页</a></li>
-                <li class="sidebar-item"><a href="course.html" class="sidebar-link">课程学习</a></li>
+                <li class="sidebar-item active"><a href="index.html" class="sidebar-link">个人主页</a></li>
+                <li class="sidebar-item"><a href="course.html" class="sidebar-link">关于我的</a></li>
                 <li class="sidebar-item"><a href="about.html" class="sidebar-link">项目经历</a></li>
                 <li class="sidebar-item"><a href="contact.html" class="sidebar-link">联系方式</a></li>
             </ul>
@@ -68,12 +76,17 @@
         </section>
         <section class="intro-section">
             <h1 id="introduction" class="section-title">个人简介</h1>
+            <p class="intro-text">浙大城市学院计算机科学与技术专业大三学生，GPA 3.8/4.0，专业排名前10%。</p>
+            <div class="education-info">
+                <h2 class="section-subtitle">教育背景</h2>
+                <p class="education-detail">浙大城市学院 | 计算机科学与技术 | 2022.09-至今</p>
+                <p class="education-detail">核心课程：数据结构、计算机网络、操作系统、数据库系统、人工智能导论</p>
+            </div>
         </section>
         <section id="projects" class="projects-section">
-            <h1 class="section-title">我的项目</h1>
+            <h1 id="projects" class="section-title">我的项目</h1>
             <div class="filter-container"></div>
             <div id="projects-container" class="projects-grid"></div>
-            <p class="intro-text">浙大城市学院计算机科学与技术专业大三学生，GPA 3.8/4.0，专业排名前10%。</p>
             <div class="profile-highlights">
                 <h2 class="section-subtitle">核心优势</h2>
                 <ul class="highlight-list">
@@ -82,11 +95,6 @@
                     <li class="highlight-item">曾获国家奖学金、校级优秀学生称号</li>
                     <li class="highlight-item">具备良好的算法基础，LeetCode刷题300+</li>
                 </ul>
-            </div>
-            <div class="education-info">
-                <h2 class="section-subtitle">教育背景</h2>
-                <p class="education-detail">浙大城市学院 | 计算机科学与技术 | 2022.09-至今</p>
-                <p class="education-detail">核心课程：数据结构、计算机网络、操作系统、数据库系统、人工智能导论</p>
             </div>
         </section>
     </main>

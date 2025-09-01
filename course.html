@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
+    <!-- 引入第三方库 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>课程学习</title>
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2IDJDNjIuNTYgMiAxMDIgMTEuNDQgMTAyIDI2QzEwMiA0MC41NiA2Mi41NiA1MCAxNiA1MEMtMzAuNTYgNTAgLTcwIDQwLjU2IC03MCAyNkMtNzAgMTEuNDQgLTMwLjU2IDIgMTYgMloiIGZpbGw9IiMxODkwZmYiLz4KPHBhdGggZD0iTTEyIDE4QzEyIDE5LjEwNDYgMTEuMTA0NiAyMCAxMCAyMEM4Ljg5NTQzIDIwIDggMTkuMTA0NiA4IDE4QzggMTYuODk1NCA4Ljg5NTQzIDE2IDEwIDE2QzExLjEwNDYgMTYgMTIgMTYuODk1NCAxMiAxOFoiIGZpbGw9IiNmZmZmZmYiLz4KPHBhdGggZD0iTTI0IDE4QzI0IDE5LjEwNDYgMjMuMTA0NiAyMCAyMiAyMEMyMC44OTU0IDIwIDIwIDE5LjEwNDYgMjAgMThDMjAgMTYuODk1NCAyMC44OTU0IDE2IDIyIDE2QzIzLjEwNDYgMTYgMjQgMTYuODk1NCAyNCAxOFoiIGZpbGw9IiNmZmZmZmYiLz4KPHBhdGggZD0iTTE2IDI4QzE0LjM0MzEgMjggMTMgMjYuNjU2OSAxMyAyNUgxOUMxOSAyNi42NTY5IDE3LjY1NjkgMjggMTYgMjhaIiBmaWxsPSIjZmZmZmZmIi8+Cjwvc3ZnPgo=">
     <link rel="stylesheet" href="style.css">
     <script type="module" src="index.js"></script>
 </head>
+
 <body class="site-body">
     <!-- 移动端点击遮罩层 -->
     <div class="mobile-overlay"></div>
@@ -15,11 +22,17 @@
         <nav class="header-nav">
             <ul class="nav-list">
                 <li class="nav-item"><a href="#skill" class="nav-link">我的技能</a></li>
-                <li class="nav-item"><a href="#course" class="nav-link">课程学习</a></li>
+                <li class="nav-item"><a href="#story" class="nav-link">我的故事</a></li>
+                <li class="nav-item"><a href="#footprint" class="nav-link">我的足迹</a></li>
                 <li class="nav-item theme-toggle-container" style="margin-left: auto;">
                     <button id="theme-toggle" class="theme-toggle nav-link" aria-label="切换日夜模式">
                         <span class="light-text">夜间模式</span>
                         <span class="dark-text" style="display: none;">日间模式</span>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button id="cursor-toggle" class="cursor-toggle" aria-label="切换自定义光标" title="自定义光标">
+                        ⚙
                     </button>
                 </li>
             </ul>
@@ -29,110 +42,157 @@
         <nav class="sidebar-nav">
             <ul class="sidebar-list">
                 <li class="sidebar-item"><a href="index.html" class="sidebar-link">个人主页</a></li>
-                <li class="sidebar-item"><a href="course.html" class="sidebar-link">课程学习</a></li>
+                <li class="sidebar-item active"><a href="course.html" class="sidebar-link">关于我的</a></li>
                 <li class="sidebar-item"><a href="about.html" class="sidebar-link">项目经历</a></li>
                 <li class="sidebar-item"><a href="contact.html" class="sidebar-link">联系方式</a></li>
             </ul>
         </nav>
     </aside>
     <main class="site-main">
-        <section class="skill-section">
-            <h1 id="skill" class="section-title">我的技能</h1>
-            <ul class="skill-list">
-                <li class="skill-item">Java编程（Spring Boot、MyBatis）</li>
-                <li class="skill-item">Python开发（数据分析、机器学习基础）</li>
-                <li class="skill-item">前端开发（HTML/CSS/JavaScript、Vue.js）</li>
-                <li class="skill-item">数据库技术（MySQL、Redis、MongoDB）</li>
-                <li class="skill-item">算法设计与分析（LeetCode 300+题）</li>
-                <li class="skill-item">版本控制（Git、GitHub）</li>
-            </ul>
-        </section>
-        <section class="course-section">
-            <h1 id="course" class="section-title">课程学习</h1>
-            <div class="table-responsive">
-<table class="course-table">
-                <thead class="table-header">
-                    <tr class="table-row-header">
-                        <th class="table-header-cell">课程名称</th>
-                        <th class="table-header-cell">学分</th>
-                        <th class="table-header-cell">成绩</th>
-                        <th class="table-header-cell">学期</th>
-                    </tr>
-                </thead>
-                <tbody class="table-body">
-                    <tr class="table-row">
-                        <td class="table-cell">高等数学</td>
-                        <td class="table-cell">5</td>
-                        <td class="table-cell">92</td>
-                        <td class="table-cell">第一学期</td>
-                    </tr>
-                    <tr class="table-row">
-                        <td class="table-cell">程序设计基础</td>
-                        <td class="table-cell">4</td>
-                        <td class="table-cell">88</td>
-                        <td class="table-cell">第一学期</td>
-                    </tr>
-                    <tr class="table-row">
-                        <td class="table-cell">数据结构</td>
-                        <td class="table-cell">4</td>
-                        <td class="table-cell">95</td>
-                        <td class="table-cell">第二学期</td>
-                    </tr>
-                    <tr class="table-row">
-                        <td class="table-cell">计算机网络</td>
-                        <td class="table-cell">3</td>
-                        <td class="table-cell">90</td>
-                        <td class="table-cell">第二学期</td>
-                    </tr>
-                    <tr class="table-row">
-                        <td class="table-cell">操作系统</td>
-                        <td class="table-cell">3</td>
-                        <td class="table-cell">85</td>
-                        <td class="table-cell">第三学期</td>
-                    </tr>
-                    <tr class="table-row">
-                        <td class="table-cell">数据库系统</td>
-                        <td class="table-cell">4</td>
-                        <td class="table-cell">93</td>
-                        <td class="table-cell">第三学期</td>
-                    </tr>
-                    <tr class="table-row">
-                        <td class="table-cell">编译原理</td>
-                        <td class="table-cell">3</td>
-                        <td class="table-cell">88</td>
-                        <td class="table-cell">第四学期</td>
-                    </tr>
-                </tbody>
-                <tfoot class="table-footer">
-                    <tr class="table-row-footer">
-                        <td class="table-footer-cell" colspan="4">总计23学分</td>
-                    </tr>
-                </tfoot>
-            </table>
-</div>
-</div>
+        <!-- 关于我 - 数据可视化区域 -->
+        <section class="about-visualization">
+            <h1 class="section-title">关于我</h1>
+
+            <!-- 动态技能条 -->
+            <article class="skills-visualization">
+                <h2 id="skill" class="section-subtitle">我的技能</h2>
+                <div class="skill-bars-container">
+                    <div class="skill-bar-item">
+                        <div class="skill-info">
+                            <span class="skill-name">JavaScript</span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" data-percent="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <div class="skill-info">
+                            <span class="skill-name">HTML/CSS</span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" data-percent="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <div class="skill-info">
+                            <span class="skill-name">React</span>
+                            <span class="skill-percentage">75%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" data-percent="75"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Node.js</span>
+                            <span class="skill-percentage">70%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" data-percent="70"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 技能雷达图 -->
+                <div class="radar-chart-container">
+                    <canvas id="skillsRadarChart">
+                        
+                    </canvas>
+                </div>
+            </article>
+
+            <!-- 我的故事 - 叙事与交互 -->
+            <article class="my-story">
+                <h2 id="story" class="section-subtitle">我的故事</h2>
+
+                <!-- 互动式人生时间轴 -->
+                <div class="timeline-container">
+                    <div class="timeline">
+                        <div class="timeline-item left">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-title">开始编程学习</h3>
+                                <span class="timeline-date">2021年9月</span>
+                                <div class="timeline-description">
+                                    <p>进入大学，开始系统学习计算机科学与技术专业知识。</p>
+                                </div>
+                                <div class="timeline-details">
+                                    <p>学习了C语言、数据结构等基础课程，开始对编程产生浓厚兴趣。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item right">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-title">前端开发入门</h3>
+                                <span class="timeline-date">2022年3月</span>
+                                <div class="timeline-description">
+                                    <p>自学HTML、CSS和JavaScript，开始前端开发之旅。</p>
+                                </div>
+                                <div class="timeline-details">
+                                    <p>完成了多个静态网页项目，熟悉了基本的前端开发流程和工具。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item left">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-title">框架学习</h3>
+                                <span class="timeline-date">2022年9月</span>
+                                <div class="timeline-description">
+                                    <p>学习Vue.js和React框架，开发更复杂的单页应用。</p>
+                                </div>
+                                <div class="timeline-details">
+                                    <p>使用Vue.js开发了校园活动管理系统，使用React开发了个人博客前端。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item right">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-title">实习经历</h3>
+                                <span class="timeline-date">2023年7月</span>
+                                <div class="timeline-description">
+                                    <p>在一家科技公司担任前端开发实习生。</p>
+                                </div>
+                                <div class="timeline-details">
+                                    <p>参与开发电商平台前端组件，学习了大型项目的开发流程和性能优化。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 我的足迹互动地图 -->
+                <div class="footprint-map">
+                    <h2  id="footprint" class="section-subtitle">我的足迹</h2>
+                    <div id="map" class="map-container"></div>
+                </div>
+            </article>
         </section>
         <section class="internship-section">
             <h1 id="internship" class="section-title">实习经历</h1>
             <div class="table-responsive">
-<table class="internship-table">
-                <thead class="table-header">
-                    <tr class="table-row-header">
-                        <th class="table-header-cell">公司名称</th>
-                        <th class="table-header-cell">职位</th>
-                        <th class="table-header-cell">时间</th>
-                        <th class="table-header-cell">主要职责</th>
-                    </tr>
-                </thead>
-                <tbody class="table-body">
-                    <tr class="table-row">
-                        <td class="table-cell">杭州XX科技有限公司</td>
-                        <td class="table-cell">后端开发实习生</td>
-                        <td class="table-cell">2024.07-2024.09</td>
-                        <td class="table-cell">参与开发电商后台管理系统，负责接口设计与实现</td>
-                    </tr>
-                </tbody>
-            </table>
+                <table class="internship-table">
+                    <thead class="table-header">
+                        <tr class="table-row-header">
+                            <th class="table-header-cell">公司名称</th>
+                            <th class="table-header-cell">职位</th>
+                            <th class="table-header-cell">时间</th>
+                            <th class="table-header-cell">主要职责</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-body">
+                        <tr class="table-row">
+                            <td class="table-cell">杭州XX科技有限公司</td>
+                            <td class="table-cell">后端开发实习生</td>
+                            <td class="table-cell">2024.07-2024.09</td>
+                            <td class="table-cell">参与开发电商后台管理系统，负责接口设计与实现</td>
+                        </tr>
+                    </tbody>
+                </table>
         </section>
     </main>
     <footer class="site-footer">
@@ -140,6 +200,6 @@
             <!-- 页脚内容 -->
         </div>
     </footer>
-
 </body>
+
 </html>

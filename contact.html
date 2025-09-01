@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>联系方式</title>
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2IDJDNjIuNTYgMiAxMDIgMTEuNDQgMTAyIDI2QzEwMiA0MC41NiA2Mi41NiA1MCAxNiA1MEMtMzAuNTYgNTAgLTcwIDQwLjU2IC03MCAyNkMtNzAgMTEuNDQgLTMwLjU2IDIgMTYgMloiIGZpbGw9IiMxODkwZmYiLz4KPHBhdGggZD0iTTEyIDE4QzEyIDE5LjEwNDYgMTEuMTA0NiAyMCAxMCAyMEM4Ljg5NTQzIDIwIDggMTkuMTA0NiA4IDE4QzggMTYuODk1NCA4Ljg5NTQzIDE2IDEwIDE2QzExLjEwNDYgMTYgMTIgMTYuODk1NCAxMiAxOFoiIGZpbGw9IiNmZmZmZmYiLz4KPHBhdGggZD0iTTI0IDE4QzI0IDE5LjEwNDYgMjMuMTA0NiAyMCAyMiAyMEMyMC44OTU0IDIwIDIwIDE5LjEwNDYgMjAgMThDMjAgMTYuODk1NCAyMC44OTU0IDE2IDIyIDE2QzIzLjEwNDYgMTYgMjQgMTYuODk1NCAyNCAxOFoiIGZpbGw9IiNmZmZmZmYiLz4KPHBhdGggZD0iTTE2IDI4QzE0LjM0MzEgMjggMTMgMjYuNjU2OSAxMyAyNUgxOUMxOSAyNi42NTY5IDE3LjY1NjkgMjggMTYgMjhaIiBmaWxsPSIjZmZmZmZmIi8+Cjwvc3ZnPgo=">
     <link rel="stylesheet" href="style.css">
     <script type="module" src="index.js"></script>
 </head>
@@ -23,6 +24,11 @@
                         <span class="dark-text" style="display: none;">日间模式</span>
                     </button>
                 </li>
+                <li class="nav-item">
+                    <button id="cursor-toggle" class="cursor-toggle" aria-label="切换自定义光标" title="自定义光标">
+                        ⚙
+                    </button>
+                </li>
             </ul>
         </nav>
     </header>
@@ -30,9 +36,9 @@
         <nav class="sidebar-nav">
             <ul class="sidebar-list">
                 <li class="sidebar-item"><a href="index.html" class="sidebar-link">个人主页</a></li>
-                <li class="sidebar-item"><a href="course.html" class="sidebar-link">课程学习</a></li>
+                <li class="sidebar-item"><a href="course.html" class="sidebar-link">关于我的</a></li>
                 <li class="sidebar-item"><a href="about.html" class="sidebar-link">项目经历</a></li>
-                <li class="sidebar-item"><a href="contact.html" class="sidebar-link">联系方式</a></li>
+                <li class="sidebar-item active"><a href="contact.html" class="sidebar-link">联系方式</a></li>
             </ul>
         </nav>
     </aside>
@@ -40,11 +46,14 @@
         <section class="contact-section">
             <h1 id="contact" class="section-title">联系方式</h1>
             <div class="contact-info">
-                <p class="contact-item">邮箱:<a href="mailto:181469878@qq.com" class="contact-link">181469878@qq.com</a></p>
+                <p class="contact-item">邮箱:<a href="mailto:181469878@qq.com" class="contact-link">181469878@qq.com</a>
+                </p>
                 <p class="contact-item">电话:<a href="tel:18358337918" class="contact-link">18358337918</a></p>
                 <p class="contact-item">地址:浙江省杭州市拱墅区浙大城市学院</p>
-                <p class="contact-item">GitHub:<a href="https://github.com/zhuyuwen" class="contact-link">github.com/zhuyuwen</a></p>
-                <p class="contact-item">个人博客:<a href="https://blog.zhuyuwen.tech" class="contact-link">blog.zhuyuwen.tech</a></p>
+                <p class="contact-item">GitHub:<a href="https://github.com/zhuyuwen"
+                        class="contact-link">github.com/zhuyuwen</a></p>
+                <p class="contact-item">个人博客:<a href="https://blog.zhuyuwen.tech"
+                        class="contact-link">blog.zhuyuwen.tech</a></p>
             </div>
             <div class="career-objective">
                 <h2 class="section-subtitle">求职意向</h2>
