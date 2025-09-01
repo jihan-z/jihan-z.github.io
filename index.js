@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
         if (isCursorEnabled) {
             cursorToggle.classList.add('active');
-            cursorToggle.title = '关闭自定义光标';
+            cursorToggle.title = '关闭自定义光标（都说了不要开了，现在老实了）';
             document.body.classList.add('custom-cursor-enabled');
             if (cursor) {
                 cursor.style.display = 'block';
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         } else {
             cursorToggle.classList.remove('active');
-            cursorToggle.title = '开启自定义光标';
+            cursorToggle.title = '开启自定义光标（请谨慎开启，免责声明：卡了不怪我）';
             document.body.classList.remove('custom-cursor-enabled');
             if (cursor) {
                 cursor.style.display = 'none';
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function () {
             isCursorEnabled = savedCursorPreference === 'true';
             if (!isCursorEnabled) {
                 cursorToggle.classList.remove('active');
-                cursorToggle.title = '开启自定义光标';
+                cursorToggle.title = '开启自定义光标（请谨慎开启，免责声明：卡了不怪我）';
                 document.body.classList.remove('custom-cursor-enabled');
                 if (cursor) {
                     cursor.style.display = 'none';
@@ -186,13 +186,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             } else {
                 cursorToggle.classList.add('active');
-                cursorToggle.title = '关闭自定义光标';
+                cursorToggle.title = '关闭自定义光标（都说了不要开了，现在老实了）';
                 document.body.classList.add('custom-cursor-enabled');
             }
         } else {
             // 默认开启
             cursorToggle.classList.add('active');
-            cursorToggle.title = '关闭自定义光标';
+            cursorToggle.title = '关闭自定义光标（都说了不要开了，现在老实了）';
             document.body.classList.add('custom-cursor-enabled');
         }
     }
